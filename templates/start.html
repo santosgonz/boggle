@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">Score: 0</div>
+    <table>
+        {%for row in board %}
+        <tr>
+            {% for letter in row%}
+            <td>{{letter}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <form action = "/check_word" id="word_form"  method="POST">
+<!--id"word_form is going to be for javascript!!!!-->
+    <input name="word" type="text" placeholder="What word did you find?" id="word_input">
+
+    <!--id"word_input is going to be for javascript!!!!-->
+    <input type = "submit">
+    </form>
+    <div class = "timer">
+        <p id="seconds">60</p>
+    </div>
+
+<!-- <script src="app.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- <script src="{{ url_for('static', filename='app.js') }}"></script> -->
+<script src="{{ url_for('static', filename='app.js') }}?v=144"></script>
+</body>
+</html>
